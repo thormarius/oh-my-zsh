@@ -60,7 +60,7 @@ local vcs_info='%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}'
 
 
 
-PROMPT="${user_host} ${current_dir} ${vcs_info}
+PROMPT="╭─${user_host} ${current_dir} ${vcs_info}
 ╰─%B$%b "
 RPROMPT="${rvm_ruby}"
 

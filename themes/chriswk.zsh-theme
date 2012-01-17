@@ -4,6 +4,7 @@ precmd() {
 autoload -Uz vcs_info
 autoload -U colors && colors
 zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' unstagedstr '%F{red}*'   # display this when there are unstaged changes
 zstyle ':vcs_info:*' stagedstr '%F{yellow}+'  # display this when there are staged changes
 zstyle ':vcs_info:*' actionformats \
@@ -11,7 +12,7 @@ zstyle ':vcs_info:*' actionformats \
 zstyle ':vcs_info:*' formats       \
     '%F{5}%F{5}[%F{2}%b%c%u%m%F{5}]%f '
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-zstyle ':vcs_info:*' enable git cvs svn
+zstyle ':vcs_info:*' enable git cvs svn hg bzr
 
 ### git: Show remote branch name for remote-tracking branches
 zstyle ':vcs_info:git*+set-message:*' hooks git-remotebranch

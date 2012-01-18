@@ -10,9 +10,9 @@ zstyle ':vcs_info:*' stagedstr '%F{yellow}+'  # display this when there are stag
 zstyle ':vcs_info:*' actionformats \
     '%F{5}%F{5}[%F{2}%b%F{3}|%F{1}%a%c%u%F{5}]%f '
 zstyle ':vcs_info:*' formats       \
-    '%F{5}%F{5}[%F{2}%b%c%u%m%F{5}]%f '
+    '%F{yellow}%s:%F{5}[%F{2}%b%c%u%m%F{5}]%f '
 zstyle ':vcs_info:git:*' formats \
-       '%F{8}(%F{2}%9.9i%F{8})%F{5}%F{5}[%F{2}%b%c%u%F{5}]%m %f'
+       '%F{yellow}%s:%F{8}(%F{2}%9.9i%F{8})%F{5}%F{5}[%F{2}%b%c%u%F{5}]%m %f'
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 zstyle ':vcs_info:*' enable git cvs svn hg bzr
 zstyle ':vcs_info:*' max-exports 5

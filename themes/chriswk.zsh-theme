@@ -48,6 +48,26 @@ theme_precmd () {
     vcs_info
 }
 
+# hg:
+# First, remove the hash from the default 'branchformat':
+zstyle ':vcs_info:hg:*' branchformat '%b'
+# Then add the hash to 'formats' as %i and truncate it to 9 chars:
+zstyle ':vcs_info:hg:*' formats '%F{yellow}%s:%F{8}(%F{2}%9.9i%F{8})%F{5}%F{5}[%F{2}%b%c%u%F{5}]%m %f'
+
+### hg: Truncate long hash to 12-chars but also allow for multiple parents
+# Hashes are joined with a + to mirror the output of `hg id`.
+zstyle ':vcs_info:hg+set-hgrev-format:*' hooks hg-shorthash
+function +vi-hg-shorthash() {
+    local -a parents
+
+    parents=( ${(s:+:)hook_com[hash]} )
+    parents=( ${(@r:12:)parents} )
+    hook_com[rev-replace]=${(j:+:)parents}
+
+    ret=1
+}
+
+
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 

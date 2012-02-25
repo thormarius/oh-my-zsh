@@ -2,9 +2,17 @@ A handful of functions, auto-complete helpers, and stuff that makes you shout...
 
 bq. "OH MY ZSHELL!"
 
+h2. Extra setup for upgrade
+
+For @oh-my-zsh@ automatic upgrade to work, you'll need to add a remote called robby pointing to git://github.com/robbyrussell/oh-my-zsh.
+
+I.e. git remote add robby git://github.com/robbyrussell/oh-my-zsh
+or if you're using "hub":http://defunkt.io/hub git remote add robbyrussell/oh-my-zsh
+
 h2. Setup
 
 @oh-my-zsh@ should work with any recent release of "zsh":http://www.zsh.org/, the minimum recommended version is 4.3.9.
+
 
 h3. The automatic installer... (do you trust me?)
 
